@@ -1,0 +1,26 @@
+{
+    
+    "manifest_version":2,
+    "name":"Paste Pro",
+    "version":"0.1.0",
+    "description":"Enable Paste , Copy , Cut , Select Text , Right Click On Websites",
+    "author":"Sutu",
+    "browser_action": {
+        "default_title":"Paste Pro is Disabled",
+        "default_icon":"disable.png"
+    },
+    "icons" : {
+        "64":"past_pro.png"
+    },
+    "background": {
+        "scripts":["background.js"],
+        "persistent":false
+    },
+
+    "content_scripts":[{
+            "matches":["*://*/*"],
+            "js":["content.js"],
+            "run_at":"document_start"
+        }]
+    
+}
